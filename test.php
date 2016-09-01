@@ -64,9 +64,13 @@
         <?php
             for($i=1; $i<=9; $i++){
                 print "<br>";
-                for($j=1; $j<=9; $j++){
-                    print $i."*".$j."=".$i*$j."<br>";
+                
+                if($i%2 == 0){
+                    for($j=1; $j<=9; $j++){
+                    print "<span class='red'>".$i."*".$j."=".$i*$j."<br></span>";
                 }
+                }
+                
             }    
         ?>
      </p>
