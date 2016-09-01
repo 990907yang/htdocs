@@ -11,7 +11,10 @@
     <title>yang</title>
 </head>
 <style>
-    .gugu { background-color: pink; }    
+    *{ margin: 0; padding: 25px; }
+    .blue { color:aquamarine;}
+    .red { color:coral;}
+    .gugu { background-color: #000; }    
 </style>
 <body>
     <header>
@@ -64,11 +67,14 @@
         <?php
             for($i=1; $i<=9; $i++){
                 print "<br>";
-                
-                if($i%2 == 0){
+                if($i%2 != 0){
                     for($j=1; $j<=9; $j++){
                     print "<span class='red'>".$i."*".$j."=".$i*$j."<br></span>";
-                }
+                    }
+                }else{
+                    for($j=1; $j<=9; $j++){
+                        print "<span class='blue'>".$i."*".$j."=".$i*$j."<br></span>";
+                    }
                 }
                 
             }    
