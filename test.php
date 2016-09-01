@@ -10,15 +10,18 @@
     <meta charset="UTF-8">
     <title>yang</title>
 </head>
+<style>
+    .gugu { background-color: pink; }    
+</style>
 <body>
     <header>
         <ul>
-          <li>1</li>
-          <li>2</li>
+          <li>안녕</li>
+          <li>하시다?</li>
           <li>3번째 예제<?php
               print PHP_VERSION;
               print PHP_OS;
-              define("HELLO","안녕하시다");
+              define("HELLO","안녕하시다요");
               print HELLO;
               print __FILE__;
               print __DIR__;
@@ -28,9 +31,45 @@
             print "알겠습니다."
           ?>
           <li>4</li>
+          <?php
+            $hello = "안녕하세요!";
+            $data = "데이터가 ㅇ벗었다."; //자동으로 타입변환
+            //배열
+            $week[0]="월";
+            $week[1]="화";
+            $mon=array(1,2,3,4,5,6,7,8,9,"월","화");
+            $year=[2016,2015,2014,2013];
+            //배열초기화
+            $month=array();
+            
+            
+            print $hello;
+            print $data;
+            print $week[1];
+            print $mon[0];
+            print $year[3];
+            
+            
+            //연관배열
+            $member["name"]="양경식";
+            $member["age"]="18";
+            $member["height"]="3000000cm";
+                print $member["age"];
+                print "<pre>";
+                print_r ($member);
+            
+            ?>
       </ul>
+      <p class="gugu">
+        <?php
+            for($i=1; $i<=9; $i++){
+                print "<br>";
+                for($j=1; $j<=9; $j++){
+                    print $i."*".$j."=".$i*$j."<br>";
+                }
+            }    
+        ?>
+     </p>
     </header>
-    <section>b</section>
-    <footer>c</footer>
 </body>
 </html>
