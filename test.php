@@ -1,5 +1,5 @@
 <?php
-   phpinfo();
+   //phpinfo();
     //주석임
     /*여러줄 주석임 ㅇㅋ?*/
     //print "출력문임 저는 당신의 똥입니다."; 
@@ -15,7 +15,15 @@
         <ul>
           <li>1</li>
           <li>2</li>
-          <li>3</li>
+          <li>3번째 예제<?php
+              print PHP_VERSION;
+              print PHP_OS;
+              define("HELLO","안녕하시다");
+              print HELLO;
+              print __FILE__;
+              print __DIR__;
+              print "dddasfasdfasdfasdfasdfasdf";
+              ?></li>
           <?php
             print "알겠습니다."
           ?>
