@@ -24,7 +24,7 @@
           <li>3번째 예제<?php
               print PHP_VERSION;
               print PHP_OS;
-              define("HELLO","안녕하시다요");
+              define("HELLO","안뇽하시다");
               print HELLO;
               print __FILE__;
               print __DIR__;
@@ -62,22 +62,31 @@
                 print_r ($member);
             
             ?>
+            <li><?php
+                $a = array("월","화","수","목","금","토","일");
+                
+                foreach($a as $key){
+                    print $key;
+                    print "<br>";
+                }
+                    
+                ?></li>
       </ul>
       <p class="gugu">
         <?php
             for($i=1; $i<=9; $i++){
                 print "<br>";
                 if($i%2 != 0){
-                    for($j=1; $j<=9; $j++){
+                    for($j=1; $j<=19; $j++){
                     print "<span class='red'>".$i."*".$j."=".$i*$j."<br></span>";
                     }
                 }else{
-                    for($j=1; $j<=9; $j++){
+                    for($j=1; $j<=19; $j++){
                         print "<span class='blue'>".$i."*".$j."=".$i*$j."<br></span>";
                     }
                 }
                 
-            }    
+            }
         ?>
      </p>
     </header>
