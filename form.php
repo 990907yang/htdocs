@@ -34,5 +34,6 @@
        게임<br>
        <input type="submit" name="송신" value="입력">
    </form>
+   <img src="/lsad.jpg" alt="라이언" title="라이언">
 </body>
 </html>
