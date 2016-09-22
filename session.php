@@ -5,7 +5,7 @@
             $count=$_SESSION["count"];
             $count++;
         }
-        $_SESSIO["count"]=$count;
+        $_SESSION["count"]=$count;
     ?>
     
 <!DOCTYPE html>
