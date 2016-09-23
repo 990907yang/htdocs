@@ -77,7 +77,7 @@
                                 <td><select name="year" class="year">
                                     <option value="" selected>연도를 선택</option>
                                     <?php
-                                        for($i=1970; $i<=2016; $i++){
+                                        for($i=1960; $i<=2016; $i++){
                                             print "<option value=".$i.">".$i."</option>";
                                         }
                                     ?>
