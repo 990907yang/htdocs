@@ -1,7 +1,15 @@
 <?php
     include "kccdb.php";
-    $insert = "select * from member order by idx desc";
-    $go = $pdo -> query($insert);
+    $rs = sql("select * from member order by idx desc");
+
+    function sql($sql){
+        global $pdo;
+        return $pdo->query($sql);
+    }
+
+    function fetch($sql){
+        return sql($sql)->fetch();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,22 +24,19 @@
 <body>
     <?php
     
-    while($row = $go->fetch()){  
-            
+    foreach($rs as $row){
             echo "<div id=wrap>";
             echo "<h1>".$row['name']."님의 회원정보</h1><br>";
-            echo "이름 ".$row['name']."<br>";
-            echo "생년월일 ".$row['year'].".".$row['month'].".".$row['day']."<br>";
+            echo "이름 : ".$row['name']."<br>";
+            echo "생년월일 : ".$row['year'].".".$row['month'].".".$row['day']."<br>";
             echo "ID : ".$row['id']."<br>";
             echo "PW : ".$row['password']."<br>";
             echo "휴대폰 번호 : ".$row['pnum']."<br>";
-            echo "SNS 수신동의 여부 ".$row['ok']."</br>";
-            echo "주소 ".$row['address']."<br>";
-            echo "우편번호".$row['add_num']."<br>";
+            $ok=$row['ok']==1?"동의":"거부";
+            echo "SNS 수신동의 여부 : ".$ok."</br>";
+            echo "주소 : ".$row['address']."<br>";
+            echo "우편번호 : ".$row['add_num']."<br>";
             echo "e-mail : ".$row['email']."</br>";
-            echo "우편번호".$row['add_num']."<br>";
-            echo "주소".$row['address1']."<br>";
-            echo "상세주소".$row['address2']."<br>";
 //            if($row['pw'] == $row['pw_Re']){
 //                echo "<span class='pw_re'>	
 //                    &#40; 비밀번호 확인 완료&#41;</span>";

@@ -4,12 +4,9 @@
 
 $pnum = $_POST["phone1"].$_POST["phone2"].$_POST["phone3"];
 $address = $_POST["address1"].$_POST["address2"];
-
-$sql = "insert into member set name='{$_POST["name"]}',year='{$_POST['year']}',month='{$_POST['month']}',day='{$_POST['day']}',id='{$_POST['id']}',password='{$_POST['password']}',pnum={$pnum},ok='{$_POST['ok']}',email='{$_POST['email']}',add_num='{$_POST['add_num']}',address={$address}";
-    
-
-    print $address;
+$sql = "insert into member set name='{$_POST["name"]}',year='{$_POST['year']}',month='{$_POST['month']}',day='{$_POST['day']}',id='{$_POST['id']}',password='{$_POST['password']}',pnum='{$pnum}',ok='{$_POST['ok']}',email='{$_POST['email']}',add_num='{$_POST['add_num']}',address='{$address}'";
     $go = $pdo->query($sql);
+
     echo "<form method='post' action='kcc_view.php'>"."출력하기";
     echo "<button>회원정보 확인</button>";
     echo "</form>";
