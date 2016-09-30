@@ -6,15 +6,18 @@
     <style>
         * { margin: 0; padding: 0; }
         body { background: #3498db; }
-        .form { margin: 0 auto; margin-top: 160px; width: 500px; height: 600px; border: 1px solid #ddd; }
+        .form { margin: 0 auto; margin-top: 160px; width: 500px; height: 330px; border: 1px solid #ddd; }
         .w { width: 50px;  height: 20px;}
         .m { margin: 15px 0  3px 0px; }
+        span { margin-left: 10px; }
+        .bb { margin-left: 5px; }
+        .start { margin-top: 10px; }
     </style>
 </head>
 <body>
     <form method="post" action="signup_check.php" class="form">
-        <span>이름</span> <input name="name" type="text" class="m"><br>
-        <span>생년월일</span> <select name="year" class="year m">
+        <span>이름</span><input name="name" type="text" class="m start" placeholder="nmae"><br>
+        <span>생년월일</span><select name="year" class="year m">
                     <option value="" selected>연도를 선택</option>
                     <?php
                         for($i=1960; $i<=2016; $i++){
@@ -38,9 +41,8 @@
                     }
                     ?>
                 </select>일<br>
-        <span>아이디</span> <input name="id" type="text"  class="m"><br>
-        <span>비밀번호</span> <input name="password" type="password"  class="m"><br>
-<!--
+        <span>아이디</span> <input name="id" type="text"  class="m" placeholder="ID"><button class="bb">중복확인</button><br>
+        <span>비밀번호</span><input name="password" type="password" placeholder="PASSWORD" class="m"><br>
         <span>휴대폰 번호</span> <select name="phone1" class="w">
                        <option value="010">010</option>
                        <option value="011">011</option>
@@ -49,14 +51,61 @@
                        <option value="018">018</option>
                        <option value="019">019</option>
                     </select> - <input name="phone2" type="text" class="w"> - <input name="phone3" type="text" class="w"><br>
--->
-        <span>SMS 수신여부</span> <input type="radio" name="ok" value="yes" checked>예
-                    <input type="radio" name="ok" value="no">아니오<br>
-        <span>E-MAIL</span> <input type="text" name="email"  class="m"><br>
-        <span>자택주소</span> <input type="text" name="address" style="width:300px;" class="m"><br>
+        <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked>예
+                    <input type="radio" name="ok" value="0">아니오<br>
+        <span>E-MAIL</span> <input type="text" name="email" placeholder="admin@aaa.com" class="m"><br>
         
         
-        <input type="submit" value="회원가입" style="margin-left:200px; margin-top:30px;">
+        <input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" readonly>
+        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+        <input type="text" name="address1" id="sample6_address" placeholder="주소">
+        <input type="text" name="address2" id="sample6_address2" placeholder="상세주소">
+
+        <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+        <script>
+            function sample6_execDaumPostcode() {
+                new daum.Postcode({
+                    oncomplete: function(data) {
+                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                        // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                        // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                        var fullAddr = ''; // 최종 주소 변수
+                        var extraAddr = ''; // 조합형 주소 변수
+
+                        // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                        if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                            fullAddr = data.roadAddress;
+
+                        } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                            fullAddr = data.jibunAddress;
+                        }
+
+                        // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                        if(data.userSelectedType === 'R'){
+                            //법정동명이 있을 경우 추가한다.
+                            if(data.bname !== ''){
+                                extraAddr += data.bname;
+                            }
+                            // 건물명이 있을 경우 추가한다.
+                            if(data.buildingName !== ''){
+                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                            }
+                            // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                            fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                        }
+
+                        // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                        document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                        document.getElementById('sample6_address').value = fullAddr;
+
+                        // 커서를 상세주소 필드로 이동한다.
+                        document.getElementById('sample6_address2').focus();
+                    }
+                }).open();
+            }
+        </script>
+        <button>회원가입</button>
     </form>
 </body>
 </html>
