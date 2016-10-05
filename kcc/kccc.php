@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <style>
         * { margin: 0; padding: 0; }
         body { background: #3498db; }
@@ -16,8 +17,8 @@
 </head>
 <body>
     <form method="post" action="signup_check.php" class="form">
-        <span>이름</span><input name="name" type="text" class="m start" placeholder="nmae"><br>
-        <span>생년월일</span><select name="year" class="year m">
+        <span>이름</span><input name="name" type="text" class="m start" placeholder="nmae" required><br>
+        <span>생년월일</span><select name="year" class="year m" required>
                     <option value="" selected>연도를 선택</option>
                     <?php
                         for($i=1960; $i<=2016; $i++){
@@ -25,7 +26,7 @@
                         }
                     ?>
                 </select>년
-                <select name="month" class="month m">
+                <select name="month" class="month m" required>
                     <option value="" selected>월을 선택</option>
                     <?php
                         for($i=1; $i<=12; $i++){
@@ -33,7 +34,7 @@
                         }
                     ?>
                 </select>월
-                <select name="day" class="day m">
+                <select name="day" class="day m" required>
                     <option value="" selected>일을 선택</option>
                     <?php
                     for($i=1; $i<=31; $i++){
@@ -41,25 +42,26 @@
                     }
                     ?>
                 </select>일<br>
-        <span>아이디</span> <input name="id" type="text"  class="m" placeholder="ID"><button class="bb">중복확인</button><br>
-        <span>비밀번호</span><input name="password" type="password" placeholder="PASSWORD" class="m"><br>
-        <span>휴대폰 번호</span> <select name="phone1" class="w">
+        <span>아이디</span> <input name="id" id="id" type="text"  class="m" placeholder="ID" required>
+        <span class="id_ck"></span><br>
+        <span>비밀번호</span><input name="password" type="password" placeholder="PASSWORD" class="m" required><br>
+        <span>휴대폰 번호</span> <select name="phone1" class="w" required>
                        <option value="010">010</option>
                        <option value="011">011</option>
                        <option value="016">016</option>
                        <option value="017">017</option>
                        <option value="018">018</option>
                        <option value="019">019</option>
-                    </select> - <input name="phone2" type="text" class="w"> - <input name="phone3" type="text" class="w"><br>
-        <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked>예
-                    <input type="radio" name="ok" value="0">아니오<br>
-        <span>E-MAIL</span> <input type="text" name="email" placeholder="admin@aaa.com" class="m"><br>
+                    </select> - <input name="phone2" type="text" class="w" required> - <input name="phone3" type="text" class="w" required><br>
+        <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked required>예
+                    <input type="radio" name="ok" value="0" required>아니오<br>
+        <span>E-MAIL</span> <input type="text" name="email" placeholder="admin@aaa.com" class="m" required><br>
         
         
-        <input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" readonly>
-        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-        <input type="text" name="address1" id="sample6_address" placeholder="주소">
-        <input type="text" name="address2" id="sample6_address2" placeholder="상세주소">
+        <input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" required readonly>
+        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" required><br>
+        <input type="text" name="address1" id="sample6_address" placeholder="주소" readonly required>
+        <input type="text" name="address2" id="sample6_address2" placeholder="상세주소" required>
 
         <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
         <script>
@@ -104,6 +106,19 @@
                     }
                 }).open();
             }
+            
+            $(document).ready(function(){
+                $("#id").on("keyup keydown keypress", function() {
+                    fn($("#id").val());
+                });
+            });
+
+            function fn(str){
+                $.post("member.php", { id: str }, function(data) {
+                    $(".id_ck").empty();
+                    $(".id_ck").append(data);
+            });
+    }
         </script>
         <button>회원가입</button>
     </form>
