@@ -5,68 +5,8 @@
     <title>20615양경식</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <style>
-        * { margin: 0; padding: 0; }
-        body { background: #3498db; }
-        .form { margin: 0 auto; margin-top: 160px; width: 500px; height: 330px; border: 1px solid #ddd; }
-        .w { width: 50px;  height: 20px;}
-        .m { margin: 15px 0  3px 0px; }
-        span { margin-left: 10px; }
-        .bb { margin-left: 5px; }
-        .start { margin-top: 10px; }
-    </style>
-</head>
-<body>
-    <form method="post" action="signup_check.php" class="form">
-        <span>이름</span><input name="name" type="text" class="m start" placeholder="nmae" required><br>
-        <span>생년월일</span><select name="year" class="year m" required>
-                    <option value="" selected>연도를 선택</option>
-                    <?php
-                        for($i=1960; $i<=2016; $i++){
-                            print "<option value=".$i.">".$i."</option>";
-                        }
-                    ?>
-                </select>년
-                <select name="month" class="month m" required>
-                    <option value="" selected>월을 선택</option>
-                    <?php
-                        for($i=1; $i<=12; $i++){
-                            print "<option value=".$i.">".$i."</option>";
-                        }
-                    ?>
-                </select>월
-                <select name="day" class="day m" required>
-                    <option value="" selected>일을 선택</option>
-                    <?php
-                    for($i=1; $i<=31; $i++){
-                        print "<option value=".$i.">".$i."</option>";
-                    }
-                    ?>
-                </select>일<br>
-        <span>아이디</span> <input name="id" id="id" type="text"  class="m" placeholder="ID" required>
-        <span class="id_ck"></span><br>
-        <span>비밀번호</span><input name="password" type="password" placeholder="PASSWORD" class="m" required><br>
-        <span>휴대폰 번호</span> <select name="phone1" class="w" required>
-                       <option value="010">010</option>
-                       <option value="011">011</option>
-                       <option value="016">016</option>
-                       <option value="017">017</option>
-                       <option value="018">018</option>
-                       <option value="019">019</option>
-                    </select> - <input name="phone2" type="text" class="w" required> - <input name="phone3" type="text" class="w" required><br>
-        <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked required>예
-                    <input type="radio" name="ok" value="0" required>아니오<br>
-        <span>E-MAIL</span> <input type="text" name="email" placeholder="admin@aaa.com" class="m" required><br>
+      <script>
         
-        
-        <input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" required readonly>
-        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" required><br>
-        <input type="text" name="address1" id="sample6_address" placeholder="주소" readonly required>
-        <input type="text" name="address2" id="sample6_address2" placeholder="상세주소" required>
-        <button>회원가입</button>
-    </form>
-</body>
-    <script>
         function sample6_execDaumPostcode() {
             new daum.Postcode({
                 oncomplete: function(data) {
@@ -110,9 +50,34 @@
         }
 
         $(document).ready(function(){
-            $("#id").on("keyup keydown keypress", function() {
-                fn($("#id").val());
+            var re_id = /^[a-z0-9_]{4,20}$/; //아이디 정규식
+            var re_pw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 정규식
+            var re_email = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 정규식
+            var 
+                form = $(".form"),
+                uid = $("#uid"),
+                upw = $("#upw"),
+                uemail = $("#uemail");
+            
+            
+            $("#uid").on("keyup keydown keypress", function() {
+                fn($("#uid").val());
             });
+            form.submit(function(){
+            if(re_id.test(uid.val()) != true){
+                alert("[ID 입력 오류] 유효한 ID를 입력해 주세요.");
+                uid.focus();
+                return false;
+            }else if(re_pw.test(upw.val()) != true){
+                alert("[PASSWORD 입력 오류] 유효한 PW를 입력해 주세요.");
+                upw.focus();
+                return false;
+            }else if(re_email.test(uemail.val()) != true){
+                alert("[EMAIL 입력 오류] 이메일을 정확히 입력해 주세요.");
+                uemail.focus();
+                return false;
+            }
+        });
         });
 
         function fn(str){
@@ -121,5 +86,69 @@
                 $(".id_ck").append(data);
         });
         }
+        
+        
     </script>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { background: #3498db; }
+        .form { margin: 0 auto; margin-top: 160px; width: 500px; height: 330px; border: 1px solid #ddd; }
+        .w { width: 50px;  height: 20px;}
+        .m { margin: 15px 0  3px 0px; }
+        span { margin-left: 10px; }
+        .bb { margin-left: 5px; }
+        .start { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <form method="post" action="signup_check.php" class="form">
+        <span>이름</span><input name="name" type="text" class="m start" placeholder="nmae" required><br>
+        <span>생년월일</span><select name="year" class="year m" required>
+                    <option value="" selected>연도를 선택</option>
+                    <?php
+                        for($i=1960; $i<=2016; $i++){
+                            print "<option value=".$i.">".$i."</option>";
+                        }
+                    ?>
+                </select>년
+                <select name="month" class="month m" required>
+                    <option value="" selected>월을 선택</option>
+                    <?php
+                        for($i=1; $i<=12; $i++){
+                            print "<option value=".$i.">".$i."</option>";
+                        }
+                    ?>
+                </select>월
+                <select name="day" class="day m" required>
+                    <option value="" selected>일을 선택</option>
+                    <?php
+                    for($i=1; $i<=31; $i++){
+                        print "<option value=".$i.">".$i."</option>";
+                    }
+                    ?>
+                </select>일<br>
+        <span>아이디</span><input name="id" id="uid" type="text" class="m" placeholder="ID" required>
+        <span class="id_ck"></span><br>
+        <span>비밀번호</span><input name="password" id="upw"type="password" placeholder="PASSWORD" class="m" required><br>
+        <span>휴대폰 번호</span> <select name="phone1" class="w" required>
+                       <option value="010">010</option>
+                       <option value="011">011</option>
+                       <option value="016">016</option>
+                       <option value="017">017</option>
+                       <option value="018">018</option>
+                       <option value="019">019</option>
+                    </select> - <input name="phone2" type="text" class="w" required> - <input name="phone3" type="text" class="w" required><br>
+        <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked required>예
+                    <input type="radio" name="ok" value="0" required>아니오<br>
+        <span>E-MAIL</span> <input type="text" name="email" id="uemail" placeholder="admin@aaa.com" class="m" required><br>
+        
+        
+        <input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" required readonly>
+        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" required><br>
+        <input type="text" name="address1" id="sample6_address" placeholder="주소" readonly required>
+        <input type="text" name="address2" id="sample6_address2" placeholder="상세주소" required>
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+  
 </html>
