@@ -22,6 +22,7 @@
 </head>
 <body>
   <table>
+  <th>선택</th>
   <th>이름</th>
   <th>생년</th>
   <th>월</th>
@@ -34,6 +35,7 @@
   <th>우편번호</th>
   <th>주소</th>
   <th></th>
+
   <?php
    foreach($result as $row){
        ?>
