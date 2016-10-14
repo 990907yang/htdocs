@@ -38,20 +38,22 @@
    foreach($result as $row){
        ?>
        <tr>
-           
-           <td><?=$row['name']?></td>
-           <td><?=$row['year']."년"?></td>
-           <td><?=$row['month']." 월 "?></td>
-           <td><?=$row['day']." 일"?></td>
-           <td><?=$row['id']?></td>
-           <td><?=$row['password']?></td>
-           <td><?=$row['pnum']?></td>
-           <td><?=$row['ok']?></td>
-           <td><?=$row['email']?></td>
-           <td><?=$row['add_num']?></td>
-           <td><?=$row['address']?></td>
-           <td><button class="btn">회원정보 삭제</button></td>
-           
+          <form action="del.php" method="post">
+               <input name="idx" type="hidden" value="<?=$row['idx']?>">
+               <td><input type="checkbox"></td>
+               <td><?=$row['name']?></td>
+               <td><?=$row['year']."년"?></td>
+               <td><?=$row['month']." 월 "?></td>
+               <td><?=$row['day']." 일"?></td>
+               <td><?=$row['id']?></td>
+               <td><?=$row['password']?></td>
+               <td><?=$row['pnum']?></td>
+               <td><?=$row['ok']?></td>
+               <td><?=$row['email']?></td>
+               <td><?=$row['add_num']?></td>
+               <td><?=$row['address']?></td>
+               <td><button type="submit" class="btn">회원정보 삭제</button></td>
+           </form>
        </tr>
         
     <?php
@@ -60,4 +62,3 @@
   </table>
 </body>
 </html>
-?>
