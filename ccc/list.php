@@ -22,7 +22,7 @@
 </head>
 <body>
  <form action="del.php" method="get">
-  <table>
+  <table> 
   <th>선택</th>
   <th>이름</th>
   <th>생년</th>
@@ -40,20 +40,19 @@
    foreach($result as $row){
        ?>
        <tr>
-          
-               <td><input class="cbox" type="checkbox" value="<?=$row['idx']?>" name='ch'></td>
-               <input type="hidden">
-               <td><?=$row['name']?></td>
-               <td><?=$row['year']."년"?></td>
-               <td><?=$row['month']." 월 "?></td>
-               <td><?=$row['day']." 일"?></td>
-               <td><?=$row['id']?></td>
-               <td><?=$row['password']?></td>
-               <td><?=$row['pnum']?></td>
-               <td><?=$row['ok']?></td>
-               <td><?=$row['email']?></td>
-               <td><?=$row['add_num']?></td>
-               <td><?=$row['address']?></td>
+           <td><input class="cbox" type="checkbox" value="<?=$row['idx']?>" name='ch'></td>
+           <input type="hidden">
+           <td><?=$row['name']?></td>
+           <td><?=$row['year']."년"?></td>
+           <td><?=$row['month']." 월 "?></td>
+           <td><?=$row['day']." 일"?></td>
+           <td><?=$row['id']?></td>
+           <td><?=$row['password']?></td>
+           <td><?=$row['pnum']?></td>
+           <td><?=$row['ok']?></td>
+           <td><?=$row['email']?></td>
+           <td><?=$row['add_num']?></td>
+           <td><?=$row['address']?></td>
        </tr>
     <?php
            
