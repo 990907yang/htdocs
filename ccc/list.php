@@ -12,7 +12,7 @@
     <title>회원정보</title>
     <style>
         *{ margin: 0; padding: 0; box-sizing: border-box; }
-        table, th, td { margin: auto; margin-top: 100px; border-spacing: 0; text-align: center; font-size: 15px; color: white; } 
+        table, th, td { margin: auto; margin-top: 100px; padding: 15px; border-spacing: 0; text-align: center; font-size: 15px; color: white; } 
         th {background-color: #c0392b; }
         tr { background-color: #e74c3c; }
         .btn { background-color: #c0392b; border: none; color: white;
@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+ <form action="del.php" method="get">
   <table>
   <th>선택</th>
   <th>이름</th>
@@ -34,15 +35,14 @@
   <th>이메일</th>
   <th>우편번호</th>
   <th>주소</th>
-  <th></th>
 
   <?php
    foreach($result as $row){
        ?>
        <tr>
-          <form action="del.php" method="post">
-               <input name="idx" type="hidden" value="<?=$row['idx']?>">
-               <td><input type="checkbox"></td>
+          
+               <td><input class="cbox" type="checkbox" value="<?=$row['idx']?>" name='ch'></td>
+               <input type="hidden">
                <td><?=$row['name']?></td>
                <td><?=$row['year']."년"?></td>
                <td><?=$row['month']." 월 "?></td>
@@ -54,13 +54,17 @@
                <td><?=$row['email']?></td>
                <td><?=$row['add_num']?></td>
                <td><?=$row['address']?></td>
-               <td><button type="submit" class="btn">회원정보 삭제</button></td>
-           </form>
        </tr>
-        
     <?php
+           
    }
       ?>
+       <button type="submit" class="btn">회원정보 삭제</button>
   </table>
+</form>  
+
+  
+ 
+
 </body>
 </html>
