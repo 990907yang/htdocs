@@ -1,7 +1,7 @@
 <?php
     include "db.php";
-    $sql = "select * from member";
-    $se = $pdo->prepare($sql);
+    $sql = "select * from member";  //member 테이블 선택
+    $se = $pdo->prepare($sql);  //
     $se -> execute();
     $result = $se->fetchAll();
 ?>
@@ -60,6 +60,7 @@
    }
       ?>
        <button type="submit" class="btn">회원정보 삭제</button>
+       <a href="update.php" class="btn">회원정보 수정</a>
   </table>
 </form>  
 </body>
@@ -76,15 +77,15 @@
     $(".chall").click(function(){
         if(this.checked){
             $(".cbox").each(function(){
-                //this.checked = true;
+                this.checked = true;
                 //$(this).attr("checked",true);
-                $(this).prop("checked",true);
+                //$(this).prop("checked",true);
             });
         }else {
             $(".cbox").each(function(){
-                //this.checked = false;
+                this.checked = false;
                 //$(this).attr("checked",false);
-                $(this).prop("checked",false);
+                //$(this).prop("checked",false);
         });
         }
     });
