@@ -59,10 +59,10 @@
                 upw = $("#upw"),
                 uemail = $("#uemail");
             
-            
-            $("#uid").on("keyup keydown keypress", function() {
+            $("#uid").on("keyup keydown keypress", function(){
                 fn($("#uid").val());
             });
+            
             form.submit(function(){
             if(re_id.test(uid.val()) != true){
                 alert("[ID 입력 오류] 유효한 ID를 입력해 주세요.");

@@ -1,7 +1,7 @@
 <?php
     include "db.php";
     $sql = "select * from member";  //member 테이블 선택
-    $se = $pdo->prepare($sql);  //
+    $se = $pdo->prepare($sql);
     $se -> execute();
     $result = $se->fetchAll();
 ?>
