@@ -274,7 +274,7 @@ address{background-color:#444;line-height:30px;text-align:center;color:#fff}
 border: 1px solid #cccccf;left: -1px}
 .list1 a{color: #666;font-size: 13px;cursor:pointer;padding-left: 7px;
     line-height: 20px;text-decoration:none}
-.syear{heigth:100px;overflow:hidden;overflow-y: scroll;max-height: 100px}
+.syear{ heigth:100px; overflow:hidden;overflow-y: scroll;max-height: 100px}
 
 /* 커뮤니티 */
 .not_tb{width:100%;margin-top:30px;border-top:3px solid #115fad;border-bottom:3px solid #ccc;table-layout:fixed}
@@ -286,3 +286,8 @@ border: 1px solid #cccccf;left: -1px}
 .not_tb .in .btn_dw{width:64px;height:30px;padding-left:20px;background-position:0 -73px;font-size:13px;color:#fff;line-height:30px}
 .not_tb .in .btn_dw:hover{color:#fff;text-decoration:none}
 .not_tb.v2 td{padding:10px 0 9px}
+.write_btn { width: 50px; height: 25px; float: right; border: 1px solid #ddd; margin-top: 5px; background: #ddd; }
+
+.textarea { width: 500px; height: 300px; margin-top: 10px; }
+.ttt { margin-right: 12px; }
+.tbox { margin-top: 10px; }

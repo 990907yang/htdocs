@@ -1,5 +1,9 @@
 <?php
-    $sql = 
+    include "db.php";
+    $sql = "select * from board";
+    $se = $pdo->prepare($sql);
+    $se->execute();
+    $result = $se->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -119,9 +123,9 @@
 					<p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
-						<a href="#">회원서비스</a>						
+						<a href="#">커뮤니티</a>						
 						<span>&gt;</span>
-						<strong>회원가입</strong>
+						<strong>공지사항</strong>
 					</p>
 					<div class="join_wrap">	
 						<h2 class="sp_sub join_title">공지사항</h2>
@@ -142,14 +146,23 @@
                                 <th scope="col"><span class="in">조회수</span></th>
                             </tr>
                             </thead>
-                        <tbody>
-                           for
-                            <tr>
-                                
-                            </tr>
-                        </tbody>
+                            
+                            <tbody>
+                               <?php
+                                    foreach($result as $row){
+                                ?>
+                                   <tr>
+                                        <td><div class="in"><?=$row['idx']?></div></td>
+                                        <td class="con"><a href="view.php?idx=<?=$row['idx']?>"><?=$row['title']?></a></td>
+                                        <td><div class="in"><?=$row['date']?></div></td>
+                                        <td><div class="in"><?=$row['count']?></div></td>
+                                    </tr>
+                                <?php
+                                    }
+                                ?>
+                            </tbody>
                         </table>
-
+                        <a href="write.php" class="write_btn">글쓰기</a>
 					</div>
 				</div>
 				</div>	

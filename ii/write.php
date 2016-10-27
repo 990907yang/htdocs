@@ -1,10 +1,3 @@
-<?php
-    include "db.php";
-    $sql = "select * from board";
-    $se = $pdo->prepare($sql);
-    $se->execute();
-    $result = $se->fetchAll();
-?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -115,7 +108,7 @@
 				<div class="left_con">
 					<h2 class="sp_sub lnb_title">회원서비스</h2>
 					<ul class="lnb">
-					<li><a href="#" class="selected_hard">공지사항<span class="sp_sub select_ico"></span></a></li>
+					<li><a href="#" class="selected_hard">글쓰기<span class="sp_sub select_ico"></span></a></li>
 					<li><a href="#">자료실<span class="sp_sub select_ico"></span></a></li>
 					</ul> 
 				</div>		
@@ -123,46 +116,17 @@
 					<p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
-						<a href="#">회원서비스</a>						
+						<a href="#">커뮤니티</a>						
 						<span>&gt;</span>
-						<strong>회원가입</strong>
+						<strong>글쓰기</strong>
 					</p>
-					<div class="join_wrap">	
-						<h2 class="sp_sub join_title">공지사항</h2>
-						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함 없도록 밝고 건강한 새로운 소식을 회원님께 알려드립니다.</p>
-						<table class="not_tb">
-					        <caption><span class="blind">공지사항 안내</span></caption>
-                            <colgroup>
-                                <col style="width:68px">
-                                <col>
-                                <col style="width:137px">
-                                <col style="width:82px">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th scope="col"><span class="in">번호</span></th>
-                                <th scope="col"><span class="in">제목</span></th>
-                                <th scope="col"><span class="in">등록일</span></th>
-                                <th scope="col"><span class="in">조회수</span></th>
-                            </tr>
-                            </thead>
-                            
-                            <tbody>
-                               <?php
-                                    foreach($result as $row){
-                                ?>
-                                   <tr>
-                                        <td><div class="in"><?=$row['idx']?></div></td>
-                                        <td class="con"><?=$row['title']?></td>
-                                        <td><div class="in"><?=$row['date']?></div></td>
-                                        <td><div class="in"><?=$row['count']?></div></td>
-                                    </tr>
-                                <?php
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-
+					<div class="join_wrap">
+					    <form action="insert.php" method="post" class="write">
+					        <span class="ttt">제목</span><input type="text" name="title" class="tbox"><br>
+					        <span>글쓴이</span><input type="text" name="writer" class="tbox"><br>
+					        <span>내용</span><input type="textarea" name="content" class="textarea"><br>
+					        <button type="submit" class="write_btn">글쓰기</button>
+					    </form>
 					</div>
 				</div>
 				</div>	
