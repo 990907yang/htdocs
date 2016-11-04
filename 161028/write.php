@@ -125,10 +125,12 @@
 						<strong>글쓰기</strong>
 					</p>
                     <div class="join_wrap">
-                        <form action="insert.php" method="post">
+                        <form action="insert.php" method="post" enctype="multipart/form-data">
                             <span>제목</span><input type="text" name="title">
                             <span>작성자</span><input type="text" name="writer">
                             <span>내용</span><input type="textarea" name="content">
+                            <label for="insert">첨부파일</label>
+                            <input type="file" name="upload" id="insert">
                             <button type="submit">글쓰기</button>
                         </form>
                     </div>

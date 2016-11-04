@@ -137,13 +137,13 @@
                                             }
                                         ?>
                                     </table>
-                                                <p><a href="./modified.php?idx=<?=$ro['idx']?>">수정</a></p>
-                                                   <p><a href="./del.php?idx=<?=$ro['idx']?>">삭제</a></p>  
-                                        <p><a href="sub1.php">목록</a></p>
-			</div>	
-		</div>	
-	</div>
-                    </div>
+                                    <p><a href="./modified.php?idx=<?=$ro['idx']?>">수정</a></p>
+                                    <p><a href="./del.php?idx=<?=$ro['idx']?>">삭제</a></p>
+                                    <p><a href="sub1.php">목록</a></p>
+			        </div>	
+		          </div>	
+	            </div>
+            </div>
 	<!-- //container -->
 	
 	<!-- footer -->

@@ -134,7 +134,7 @@
                         ?>
                         <form action="modify.php?idx=<?=$ro['idx']?>" method="post">
                                 <span>제목</span><input type="text" name="title" value="<?=$ro['title']?>">
-                                <span>작성자</span><input type="text" name="writer" value="<?=$ro['writer']?>" disabled>
+                                <span>작성자</span><input type="text" name="writer" value="<?=$ro['writer']?>">
                                 <span>내용</span><input type="textarea" class="textaaa" name="content" value="<?=$ro['content']?>">
                             <button type="submit">수정</button>
                         </form>
