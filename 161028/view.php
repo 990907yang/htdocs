@@ -112,34 +112,44 @@
                                     <p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
-						<a href="#">회원서비스</a>						
+						<a href="#">커뮤니티</a>						
 						<span>&gt;</span>
-						<strong>회원가입</strong>
+						<strong>공지사항</strong>
 					</p>
 					<div class="join_wrap">	
 						<h3 class="sp_sub join_title">공지사항</h3>
 						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함 없도록 밝고 건강한 새로운 소식을 회원님께 알려드립니다.</p>
-                                    <table id="view">
-                                       <?php
-                                            foreach($result as $ro){
-                                        ?>
-                                        <tr class="view_tr">
-                                            <td></td><td>제목:<?=$ro['title']?></td>
-                                        </tr>
-                                        <tr class="view_tr">
-                                            <td></td><td>조회수:<?=$ro['count']?></td>
-                                        </tr>
-                                        <tr class="view_tr">
-                                            <td></td><td>작성일:<?=$ro['date']?></td>
-                                        </tr>
-                                        <tr class="view_tr"><td>내용</td><td><?=$ro['content']?></td></tr>
-                                        <?php
-                                            }
-                                        ?>
-                                    </table>
-                                    <p><a href="./modified.php?idx=<?=$ro['idx']?>">수정</a></p>
-                                    <p><a href="./del.php?idx=<?=$ro['idx']?>">삭제</a></p>
-                                    <p><a href="sub1.php">목록</a></p>
+                       <?php
+                            foreach($result as $ro){
+                        ?>
+                            <div class="view_wrap">
+                                <div class="view_tit">
+                                    <div class="vt_left">
+                                        <strong><?=$ro['title']?></strong>
+                                    </div>
+                                    <div class="vt_right">
+                                        <strong><?=$ro['count']?></strong>
+                                    </div>
+                                </div>
+                                <div class="view_cont">
+                                    <?=$ro['content']?>
+                                </div>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        <div class="btn_area">
+						    <div class="btn_view">
+						        <a href="sub1.php">목록</a>
+						    </div>
+						    <div class="btn_view">
+						        <a href="./modified.php?idx=<?=$ro['idx']?>">수정</a>
+						    </div>
+						    <div class="btn_view">
+						        <a href="./del.php?idx=<?=$ro['idx']?>">삭제</a>
+						    </div>
+					    </div>
+                
 			        </div>	
 		          </div>	
 	            </div>
