@@ -106,9 +106,7 @@
 		</div>
 	</div>
 	<!-- //header -->
-	
 	<hr>
-	
 	<!-- container -->
 	<div id="container">
 		<div id="content">
@@ -124,7 +122,7 @@
 					<p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
-						<a href="#">커뮤니티</a>						
+						<a href="#">커뮤니티</a>
 						<span>&gt;</span>
 						<strong>글쓰기</strong>
 					</p>
@@ -133,9 +131,9 @@
                             foreach($re as $ro){
                         ?>
                         <form action="modify.php?idx=<?=$ro['idx']?>" method="post">
-                                <span>제목</span><input type="text" name="title" value="<?=$ro['title']?>">
-                                <span>작성자</span><input type="text" name="writer" value="<?=$ro['writer']?>">
-                                <span>내용</span><input type="textarea" class="textaaa" name="content" value="<?=$ro['content']?>">
+                            <span>제목</span><input type="text" name="title" value="<?=$ro['title']?>">
+                            <span>작성자</span><input type="text" name="writer" value="<?=$ro['writer']?>">
+                            <span>내용</span><input type="textarea" class="textaaa" name="content" value="<?=$ro['content']?>">
                             <button type="submit">수정</button>
                         </form>
                         <?php
