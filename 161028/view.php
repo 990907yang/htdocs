@@ -80,9 +80,9 @@
 			<li class="menu5">
 				<a href="#" class="sp_com site_menu5">COMMUNITY 커뮤니티</a>
 				<ul class="site_sub_menu">
-                                                                        <li><a href="sub1.php" class="sp_com site_menu5_1">공지사항</a></li>
-                                                                        <li><a href="" class="sp_com site_menu5_2">자료실</a></li>
-                                                                        <li><a href="#" class="sp_com site_menu5_3">Joinroom</a></li>
+					<li><a href="sub1.php" class="sp_com site_menu5_1">공지사항</a></li>
+					<li><a href="" class="sp_com site_menu5_2">자료실</a></li>
+					<li><a href="#" class="sp_com site_menu5_3">Joinroom</a></li>
 				</ul>
 			</li>
 			</ul>
@@ -109,7 +109,7 @@
 					</ul> 
 				</div>		
 				<div class="right_con">	
-                                    <p class="pg_nav">	
+                        <p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
 						<a href="#">커뮤니티</a>						
@@ -138,22 +138,21 @@
                         <?php
                             }
                         ?>
-                        <div class="btn_area">
-						    <div class="btn_view">
-						        <a href="sub1.php">목록</a>
-						    </div>
-						    <div class="btn_view">
-						        <a href="./modified.php?idx=<?=$ro['idx']?>">수정</a>
-						    </div>
-						    <div class="btn_view">
-						        <a href="./del.php?idx=<?=$ro['idx']?>">삭제</a>
-						    </div>
-					    </div>
-                
-			        </div>	
-		          </div>	
-	            </div>
-            </div>
+						<div class="btn_area">
+							<div class="btn_view">
+								<a href="sub1.php">목록</a>
+							</div>
+							<div class="btn_view">
+								<a href="./modified.php?idx=<?=$ro['idx']?>">수정</a>
+							</div>
+							<div class="btn_view">
+								<a href="./del.php?idx=<?=$ro['idx']?>">삭제</a>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</div>
+    </div>
 	<!-- //container -->
 	
 	<!-- footer -->
