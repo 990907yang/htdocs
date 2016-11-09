@@ -414,7 +414,10 @@ address{background-color:#444;line-height:30px;text-align:center;color:#fff}
 .view_txt:first-child{margin-top:0}
 
 .btn_area{padding-top:20px;border-top:3px solid #ccc;text-align:right;}
-.btn_area .btn_view{width:54px;height:24px;background-position:0 -171px;font-size:13px;color:#333;line-height:34px; float: right; text-align:center; margin: 5px; background: #ddd;}
+.btn_area .btn_view{ width:54px;height:24px;background-position:0 -171px;font-size:13px;color:#333;line-height:24px; float: right; text-align:center; margin: 5px; background: #ddd;}
 .btn_area .btn_view:hover{text-decoration:none}
 
-.textaaa { width: 500px; height: 400px; }
+.textaaa { width: 500px; height: 400px; margin-top: 30px; margin-bottom: 50px;}
+.mo_te { padding-bottom: 24px; margin-bottom: 10px; border-bottom: 3px solid #ddd; }
+
+.insert { margin-bottom: 10px; }

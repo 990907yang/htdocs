@@ -13,7 +13,7 @@
 <body>
 <!-- skip nav -->
 <ul id="skip">
-<li><a href="#site_menu" tabindex="0">주메뉴 바로가기</a></li>
-<li><a href="#content">본문 바로가기</a></li>
+    <li><a href="#site_menu" tabindex="0">주메뉴 바로가기</a></li>
+    <li><a href="#content">본문 바로가기</a></li>
 </ul>
 <!-- //skip nav -->

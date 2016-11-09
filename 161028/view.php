@@ -121,6 +121,7 @@
 						<p class="join_txt">금강컨트리클럽을 이용하시기 불편함 없도록 밝고 건강한 새로운 소식을 회원님께 알려드립니다.</p>
                        <?php
                             foreach($result as $ro){
+                            $content = nl2br($ro['content']);
                         ?>
                             <div class="view_wrap">
                                 <div class="view_tit">
@@ -132,7 +133,10 @@
                                     </div>
                                 </div>
                                 <div class="view_cont">
-                                    <?=$ro['content']?>
+                                    <?=$content?>
+                                </div>
+                                <div class="view_file">
+                                    <?=$ro['upload']?>
                                 </div>
                             </div>
                         <?php

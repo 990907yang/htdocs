@@ -2,32 +2,6 @@
     require_once 'inc/header.php';
     include "db.php";
 ?>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-<title>KCC 금강컨트리클럽</title>
-<link rel="stylesheet" type="text/css" href="css/kcc_style.css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-	//jquery onload
-	$(function(){
-		//Html parsing 이 다 된 후 호출되는 영역.
-	  $(".lnb li a").mouseover(function(){
-	  	$(".lnb li a.selected").removeClass("selected");
-	  	$(this).addClass("selected");
-	  });
-	});
-</script>
-</head>
-<body>
-<!-- skip nav -->
-<ul id="skip">
-<li><a href="#gnb" tabindex="0">주메뉴 바로가기</a></li>
-<li><a href="#content">본문 바로가기</a></li>
-</ul>
-<!-- //skip nav -->
 <div id="wrap" class="sub_bg">
 	<!-- header -->	
 	<div id="header">	
@@ -36,7 +10,8 @@
 				<strong class="blind">KCC 금강컨트리클럽</strong>
 			</a>
 		</h1>			
-		<div id="site_gnb">	
+		<div id="site_gnb">
+			<div class="">
 			<ul class="gnb_menu">
 			<li>김윤미님 환영합니다</li>
 			<li><a href="#">회원정보수정</a></li>
@@ -44,60 +19,71 @@
 			<li><a href="#">로그아웃</a></li>
 			<li><a href="#">사이트맵</a></li>
 			</ul>
+			<a class="m_gnb_ico"></a>
+			<div class="close_box ">
+				<a href="#" class="btn_close"><span class="blind">메뉴 닫기</span></a>
+			</div>
+			</div>
 		</div>
-		<div id="site_menu_wrap">
-			<div id="site_menu">
-				<h2 class="blind">사이트메뉴</h2>
-				<ul class="site_menu_lst">
-				<li class="menu_lst1">
-					<a href="#" class="sp_com introduct"><span class="blind">Introduction 클럽소개</span></a>
-					<ul class="site_sub_menu">
-					<li><a href="#"><span class="blind">클럽소개</span></a></li>
-					<li><a href="#"><span class="blind">연혁</span></a></li>
-					<li><a href="#"><span class="blind">이용안내</span></a></li>
-					<li><a href="#"><span class="blind">관계사 소개</span></a></li>
-					<li><a href="#"><span class="blind">오시는 길</span></a></li>
-					<li><a href="#"><span class="blind">CONTACT US</span></a></li>
-					</ul>
-				</li>
-				<li class="menu_lst2">
-					<a href="#" class="sp_com reservation"><span class="blind">RESERVATION 예약정보</span></a>
-					<ul class="site_sub_menu">
-					<li><a href="#"><span class="blind">예약관리</span></a></li>
-					<li><a href="#"><span class="blind">조인관리</span></a></li>
-					<li><a href="#"><span class="blind">이용내역</span></a></li>
-					<li><a href="#"><span class="blind">위약정보</span></a></li>
-					</ul>
-				</li>
-				<li class="menu_lst3">
-					<a href="#" class="sp_com course"><span class="blind">COURCE 코스안내</span></a>
-					<ul class="site_sub_menu">
-					<li><a href="#"><span class="blind">코스소개</span></a></li>
-					<li><a href="#"><span class="blind">서코스</span></a></li>
-					<li><a href="#"><span class="blind">동코스</span></a></li>
-					<li><a href="#"><span class="blind">남코스</span></a></li>
-					<li><a href="#"><span class="blind">코스 갤러리</span></a></li>
-					</ul>
-				</li>
-				<li class="menu_lst4">
-					<a href="#" class="sp_com facilities"><span class="blind">FACILITIES 시설안내</span></a>
-					<ul class="site_sub_menu">
-					<li><a href="#"><span class="blind">클럽하우스</span></a></li>
-					<li><a href="#"><span class="blind">특선메뉴</span></a></li>
-					<li><a href="#"><span class="blind">그늘집</span></a></li>
-					<li><a href="#"><span class="blind">락커룸</span></a></li>
-					<li><a href="#"><span class="blind">프로샵</span></a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" class="sp_com community"><span class="blind">COMMUNITY 커뮤니티</span></a>
-					<ul class="site_sub_menu">
-					<li><a href="#"><span class="blind">공지사항</span></a></li>
-					<li><a href="#"><span class="blind">자료실</span></a></li>
-					<li><a href="#"><span class="blind">Joinroom</span></a></li>
-					</ul>
-				</li>
+		<div id="site_menu">
+			<h2>
+				<a class="m_menu_ico"><span  class="blind">사이트메뉴</span></a>
+			</h2>
+			<!--해당메뉴 li class에 selected 추가-->
+			<div class="menu_lst_wrap">
+			<ul class="site_menu_lst">
+			<li class="menu1">
+				<a href="#" class="sp_com site_menu1">Introduction 클럽소개</a>
+				<ul class="site_sub_menu">
+				<li><a href="#" class="sp_com site_menu1_1">클럽소개</a></li>
+				<li><a href="#" class="sp_com site_menu1_2">연혁</a></li>
+				<li><a href="#" class="sp_com site_menu1_3">이용안내</a></li>
+				<li><a href="#" class="sp_com site_menu1_4">관계사 소개</a></li>
+				<li><a href="#" class="sp_com site_menu1_5">오시는 길</a></li>
+				<li><a href="#" class="sp_com site_menu1_6">CONTACT US</a></li>
 				</ul>
+			</li>
+			<li class="menu2">
+				<a href="#" class="sp_com site_menu2">RESERVATION 예약정보</a>
+				<ul class="site_sub_menu">
+				<li><a href="#" class="sp_com site_menu2_1">예약관리</a></li>
+				<li><a href="#" class="sp_com site_menu2_2">조인관리</a></li>
+				<li><a href="#" class="sp_com site_menu2_3">이용내역</a></li>
+				<li><a href="#" class="sp_com site_menu2_4">위약정보</a></li>
+				</ul>
+			</li>
+			<li class="menu3">
+				<a href="#" class="sp_com site_menu3">COURCE 코스안내</a>
+				<ul class="site_sub_menu">
+				<li><a href="#" class="sp_com site_menu3_1">코스소개</a></li>
+				<li><a href="#" class="sp_com site_menu3_2">서코스</a></li>
+				<li><a href="#" class="sp_com site_menu3_3">동코스</a></li>
+				<li><a href="#" class="sp_com site_menu3_4">남코스</a></li>
+				<li><a href="#" class="sp_com site_menu3_5">코스 갤러리</a></li>
+				</ul>
+			</li>
+			<li class="menu4">
+				<a href="#" class="sp_com site_menu4">FACILITIES 시설안내</a>
+				<ul class="site_sub_menu">
+				<li><a href="#" class="sp_com site_menu4_1">클럽하우스</a></li>
+				<li><a href="#" class="sp_com site_menu4_2">특선메뉴</a></li>
+				<li><a href="#" class="sp_com site_menu4_3">그늘집</a></li>
+				<li><a href="#" class="sp_com site_menu4_4">락커룸</a></li>
+				<li><a href="#" class="sp_com site_menu4_5">프로샵</a></li>
+				</ul>
+			</li>
+			<li class="menu5">
+				<a href="#" class="sp_com site_menu5">COMMUNITY 커뮤니티</a>
+				<ul class="site_sub_menu">
+				<li><a href="#" class="sp_com site_menu5_1">공지사항</a></li>
+				<li><a href="#" class="sp_com site_menu5_2">자료실</a></li>
+				<li><a href="#" class="sp_com site_menu5_3">Joinroom</a></li>
+				</ul>
+			</li>
+			</ul>
+			<div class="close_box close_box2">
+				<a href="#" class="btn_close"><span class="blind">메뉴 닫기</span></a>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -124,16 +110,27 @@
 						<span>&gt;</span>
 						<strong>글쓰기</strong>
 					</p>
-                    <div class="join_wrap">
+                   <div class="join_wrap">
+						<h3 class="join_title">공지사항</h3>
+						<p class="mo_te">공지사항을 작성하세요.</p>
                         <form action="insert.php" method="post" enctype="multipart/form-data">
                             <span>제목</span><input type="text" name="title">
                             <span>작성자</span><input type="text" name="writer">
-                            <span>내용</span><textarea name="content" class="textaaa" cols="30" rows="10"></textarea></br>
-                            <label for="insert">첨부파일</label>
-                            <input type="file" name="upload" id="insert">
-                            <button type="submit">글쓰기</button>
-                        </form>
-                    </div>
+                            <span>내용</span><textarea name="content" class="textaaa" cols="30" rows="10"></textarea><br>
+                            <div class="insert">
+                                <label for="insert">첨부파일</label>
+                                <input type="file" name="upload" class="insert">
+                            </div>
+                            <div class="btn_area">
+                                <div class="btn_view">
+                                    <button type="submit">글쓰기</button>
+                                </div>
+                                <div class="btn_view">
+                                    <a href="sub1.php">취소</a>
+                                </div>
+					        </div>
+                        </form>  
+                   </div>
 				</div>
 				</div>	
 		</div>	
