@@ -191,10 +191,10 @@ address{margin-top:8px;color:#232426;letter-spacing:-0.6px}
 .webcam{width:180px;background-position:-430px -47px}
 .mobileapp{width:186px;background-position:-255px -130px}
 
-.notice_area{position:relative;overflow:hidden}
+.notice_area{position:relative;overflow:hidden; height: 220px;}
 .notice{position:absolute;top:0;left:0;width:220px;height:195px;padding:25px 0 0 25px;background-position:0 0}
 .notice_txt{width:82px;height:62px;background-position:0 -208px}
-.notice_list{overflow:hidden;margin-left:245px;margin-right:490px;padding:8px 19px;background-position:-254px 0;*padding:8px 14px;/*IE7*/}
+.notice_list{overflow:hidden; height: 220px; margin-left:245px;margin-right:490px;padding:8px 19px;background-position:-254px 0;*padding:8px 14px;/*IE7*/}
 .notice_list_in{width:100%}
 .notice_list_in td{border-top:1px solid #bababa;letter-spacing:-0.4px;line-height:40px}
 .notice_list_in tr:first-child td{border-top:0}
@@ -208,6 +208,10 @@ address{margin-top:8px;color:#232426;letter-spacing:-0.6px}
 .notice_pg .btn_next{float:left;margin-left:3px;background-position:-321px 0}
 .notice_more{display:none}
 .banner{position:absolute;top:0;right:0;width:490px}
+
+/*메인 리스트*/
+.tbody_fst { border-bottom: 1px solid #ddd; }
+.tbody_fst:nth-child(6) { border: 0px; }
 
 .link_area{position:relative}
 .link_area:after{display:block;clear:both;content:""}
@@ -403,7 +407,7 @@ address{background-color:#444;line-height:30px;text-align:center;color:#fff}
 .view_tr{height: 76px;}
 #view{border-top: 3px solid #115fad;margin-top: 30px;width:100%}
 
-.view_wrap{margin-top:29px}
+.view_wrap{margin-top:29px; margin-bottom: 20px;}
 .view_tit{overflow:hidden;padding:13px 22px 14px 12px;border-top:3px solid #115fad;border-bottom:1px solid #ddd;background:#f2f8ff;font-size:13px;color:#333}
 .vt_left{float:left}
 .vt_right{display:inline;float:right}

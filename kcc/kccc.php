@@ -6,10 +6,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
       <script>
-        
-        function sample6_execDaumPostcode() {
+        function sample6_execDaumPostcode(){
             new daum.Postcode({
-                oncomplete: function(data) {
+                oncomplete: function(data){
                     // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
                     // 각 주소의 노출 규칙에 따라 주소를 조합한다.
