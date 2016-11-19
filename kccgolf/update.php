@@ -1,9 +1,12 @@
 <?php
     require_once 'inc/header.php';
     include "db.php";
-?>	
+    $sql = "select * from board where idx='{$_GET['idx']}'";
+    $se = $pdo->prepare($sql);
+    $se -> execute();
+    $re = $se->fetchAll();
+?>
 	<hr>
-	
 	<!-- container -->
 	<div id="container">
 		<div id="content">
@@ -13,41 +16,47 @@
 					<ul class="lnb">
 					<li><a href="#" class="selected_hard">글쓰기<span class="sp_sub select_ico"></span></a></li>
 					<li><a href="#">자료실<span class="sp_sub select_ico"></span></a></li>
-					</ul>
+					</ul> 
 				</div>		
 				<div class="right_con">	
 					<p class="pg_nav">	
 						<a href="#">홈</a>
 						<span>&gt;</span>
-						<a href="#">커뮤니티</a>						
+						<a href="#">커뮤니티</a>
 						<span>&gt;</span>
 						<strong>글쓰기</strong>
 					</p>
-                   <div class="join_wrap">
-						<h3 class="join_title">공지사항</h3>
+                    <div class="join_wrap">
+						<h3 class="sp_sub join_title">글쓰기</h3>
 						<p class="mo_te">공지사항을 작성하세요.</p>
-                        <form action="insert.php" method="post" enctype="multipart/form-data">
-                            <span>제목</span><input type="text" name="title" required>
-                            <span>작성자</span><input type="text" name="writer" required>
-                            <span>내용</span><textarea name="content" class="textaaa" cols="30" rows="10" required></textarea><br>
+                          <?php
+                            foreach($re as $ro){
+                        ?> 
+                        <form action="update_p.php?idx=<?=$ro['idx']?>" method="post">
+                            <span>제목</span><input type="text" name="title" value="<?=$ro['title']?>">
+                            <span>작성자</span><input type="text" name="writer" value="<?=$ro['writer']?>">
+                            <textarea name="content" class="textaaa" cols="30" rows="10"><?=$ro['content']?></textarea>
                             <div class="insert">
                                 <label for="insert">첨부파일</label>
-                                <input type="file" name="upload" class="insert" required>
+                                <input type="file" name="upload" class="insert">
                             </div>
                             <div class="btn_area">
                                 <div class="btn_view">
-                                    <button type="submit">글쓰기</button>
+                                    <button type="submit">수정</button>
                                 </div>
                                 <div class="btn_view">
                                     <a href="sub1.php">취소</a>
                                 </div>
 					        </div>
-                        </form>  
-                   </div>
+                        </form>
+                        <?php
+                            }
+                        ?>
 				</div>
-				</div>	
-		</div>	
-	</div>
+            </div>
+        </div>
+    </div>	
+</div>	
 	<!-- //container -->
 	<hr>
 	

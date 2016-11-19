@@ -33,6 +33,7 @@
                             <div class="insert">
                                 <label for="insert">첨부파일</label>
                                 <input type="file" name="upload" class="insert" required>
+                                <br><span>* 파일이름은 꼭 영어로 해주세요. ex) aa.jpg</span>
                             </div>
                             <div class="btn_area">
                                 <div class="btn_view">

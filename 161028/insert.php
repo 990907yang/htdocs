@@ -11,7 +11,7 @@
     move_uploaded_file($_FILES['upload']['tmp_name'],$file_path);
         echo "<script>location.href='sub1.php';</script>";
     }else{
-        echo "<script>alert('첨부파일 용량초과');location.href='sub1.php';</script>";
+        echo "<script>alert('첨부파일 용량초과');</script>";
     }
     
     $sql = "insert into board set title='{$_POST['title']}',writer='{$_POST['writer']}',content='{$_POST['content']}',upload='{$img_dir}'";
