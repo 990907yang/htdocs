@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.0.0.js"></script>
+ 
+   <script>
+        
+    $(document).ready(function(){
+       $("#new_allay").click(function(){
+		   $('#map_show').empty();
+		    $('#bus_show').empty();
+          var code = $('#bus_num').val();
+           if(code.length==5){
+           var url='bus.php';
+           }
+           else{
+               alert("버스정류장 고유번호가 아닙니다.");
+                $('#bus_num').empty();
+               
+           }
+           
+           
+      $.ajax({
+	
+        url:url,
+          datatype:'xml',
+          type:'get',
+          data:$('form').serialize(),
+          success:function(response){
+              console.log(response);
+             
+             var my_adirect = $(response).find('stNm:first').text();
+	
+			    $("#map_show").append("<"+my_adirect+"에서 운행하는 버스></br>");
+                $("#bus_show").append("<"+my_adirect+"에서 운행하는 버스의 도착예정시간></br>");
+			
+          $(response).find('itemList').each(function(){
+              
+            var time1 = $(this).find('arrmsg1').text();
+			  var time2 = $(this).find('arrmsg2').text() ;
+              var bus_num = $(this).find('rtNm').text();
+
+			
+			  
+              $("#map_show").append("버스 :: "+bus_num+"</br>");
+                $("#bus_show").append("현재 "+ bus_num +" 번 버스의 도착 예정 시간 || "+time1+"  ||   다음 버스예정시간 || "+time2+"</br>");
+          });
+            
+          }
+          
+          
+      });
+           
+           
+       });
+        
+        
+        
+        
+        
+    });
+    </script>
+    
+    <link rel="stylesheet" href="css/gongan.css">
+</head>
+<body>
+  <div id="warp">
+  
+  
+   <!--input type="text" id="bus_num">
+    <input type="button" id="new_allay">-->
+    <div id="header">버스 도착 예정 시간 안내</div>
+    <div id="codes">
+       <form>
+        <input type="text" id="bus_num" maxlength="5" name="code" placeholder="'-' 자를 제외한 정류장 고유번호 5자리를 입력해주세요 ">
+    
+        </form>
+    <input type="button" id="new_allay" value="조회" >
+    </div>
+   
+     <div id="contents">
+       <div id="map">
+           <div id="map_show"></div>
+       </div> 
+        <div id="bus">
+                 <div id="bus_map"></div>
+
+          <div id="bus_show"></div>
+          </div> 
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+   
+    
+    
+</body>
+</html>

@@ -15,8 +15,8 @@
 				<div class="left_con">
 					<h2 class="sp_sub lnb_title">COMMUNITY 커뮤니티</h2>
 					<ul class="lnb">
-					<li><a href="#">공지사항<span class="sp_sub select_ico"></span></a></li>
-					<li><a href="#" class="selected_hard">자료실<span class="sp_sub select_ico"></span></a></li>
+					<li><a href="#" class="selected_hard">공지사항<span class="sp_sub select_ico "></span></a></li>
+					<li><a href="#">자료실<span class="sp_sub select_ico"></span></a></li>
 					<li><a href="#">Joinroom<span class="sp_sub select_ico"></span></a></li>
 					</ul> 
 				</div>		

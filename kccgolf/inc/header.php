@@ -3,7 +3,7 @@
         $wrap = "main";
     }else{
         $wrap = "sub_bg";
-    }
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="ko">
