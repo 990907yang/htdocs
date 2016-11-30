@@ -16,6 +16,7 @@
 <script type="text/javascript" src="js/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/jquery/flexslider/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
 <!-- skip nav -->

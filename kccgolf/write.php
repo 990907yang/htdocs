@@ -32,7 +32,7 @@
                             <span>내용</span><textarea name="content" class="textaaa" cols="30" rows="10" required></textarea><br>
                             <div class="insert">
                                 <label for="insert">첨부파일</label>
-                                <input type="file" name="upload" class="insert" required>
+                                <input type="file" name="upload" class="insert">
                                 <br><span>* 파일이름은 꼭 영어로 해주세요. ex) aa.jpg</span>
                             </div>
                             <div class="btn_area">

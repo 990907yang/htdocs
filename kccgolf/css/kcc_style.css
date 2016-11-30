@@ -402,6 +402,11 @@ address{background-color:#444;line-height:30px;text-align:center;color:#fff}
 	border-top:1px solid #ccc;
 	text-align: center;
 }
+/*회원가입 페이지*/
+input { margin: 10px; }
+.w { width: 50px;  height: 20px;}
+
+/*글쓰기부분*/
 .update{background: red;border-radius: 5px;width: 60px;height: 30px}
 .b1{width:20%;font-size:14px}
 .b1_input{width:60%;height:20px;margin-left:40px}
