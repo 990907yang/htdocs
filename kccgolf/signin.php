@@ -96,9 +96,9 @@
             upw = $("#upw"),
             uemail = $("#uemail");
 
-        $("#uid").on("keyup keydown keypress", function(){
-            fn($("#uid").val());
-        });
+//        $("#uid").on("keyup keydown keypress", function(){
+//            fn($("#uid").val());
+//        });
 
         form.submit(function(){
             if(re_id.test(uid.val()) != true){
@@ -155,12 +155,11 @@
                         <div class="article_box">
                             <div class="art_tit_wrap">
                                 <h3 class="article_tit">상세정보 입력</h3>
-                                <p class="tip"><em>*</em>표시는 필수입력 항목입니다.</p>
                             </div>	
                             <div class="enter_area">
-                                <span>이름</span><input name="name" type="text" class="m start" placeholder="name" required><br>
+                                <span>이름</span><input name="name" type="text" class="m start" placeholder="name" ><br>
                                 <span>이름(영문)</span><input type="text" name="ename" class="one" placeholder="Eng name"><br>
-                                <span>생년월일</span><select name="year" class="year m" required>
+                                <span>생년월일</span><select name="year" class="year m" >
                                     <option value="" selected>연도를 선택</option>
                                     <?php
                                     for($i=1960; $i<=2016; $i++){
@@ -168,7 +167,7 @@
                                     }
                                     ?>
                                 </select>년
-                                <select name="month" class="month m" required>
+                                <select name="month" class="month m" >
                                     <option value="" selected>월을 선택</option>
                                     <?php
                                     for($i=1; $i<=12; $i++){
@@ -176,7 +175,7 @@
                                     }
                                     ?>
                                 </select>월
-                                <select name="day" class="day m" required>
+                                <select name="day" class="day m" >
                                     <option value="" selected>일을 선택</option>
                                     <?php
                                     for($i=1; $i<=31; $i++){
@@ -184,29 +183,28 @@
                                     }
                                     ?>
                                 </select>일<br>
-                                <span>ID</span><input name="id" id="uid" type="text" class="m" placeholder="ID" required><br>
-                                <span>비밀번호</span><input name="password" id="upw" type="password" placeholder="PASSWORD" class="m" required><br>
-                                <span>비밀번호 확인</span><input name="passwordok" type="password" placeholder="PASSWORD" class="m" required><br>
-                                <span>휴대폰 번호</span><select name="phone1" class="w" required>
+                                <span>ID</span><input name="id" id="uid" type="text" class="m" placeholder="ID" ><br>
+                                <span>비밀번호</span><input name="password" id="upw" type="password" placeholder="PASSWORD" class="m" ><br>
+                                <span>휴대폰 번호</span><select name="phone1" class="w" >
                                     <option value="010">010</option>
                                     <option value="011">011</option>
                                     <option value="016">016</option>
                                     <option value="017">017</option>
                                     <option value="018">018</option>
                                     <option value="019">019</option>
-                                </select> - <input name="phone2" type="text" class="w" required> - <input name="phone3" type="text" class="w" required><br>
-                                <span>SMS 수신여부</span> <input type="radio" name="ok" value="1" checked required>예
-                                <input type="radio" name="ok" value="0" required>아니오<br>
-                                <span>E-MAIL</span> <input type="text" name="email" id="uemail" placeholder="admin@aaa.com" class="m" required><br>
+                                </select> - <input name="phone2" type="text" class="w" > - <input name="phone3" type="text" class="w" ><br>
+                                <span>SMS 수신여부</span> <input type="radio" name="ok" value="수신동의" checked required>예
+                                <input type="radio" name="ok" value="수신거부" required>아니오<br>
+                                <span>E-MAIL</span> <input type="text" name="email" id="uemail" placeholder="admin@aaa.com" class="m" ><br>
                                 
                                 <!--주소-->
-                                <span>주소</span><input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" required readonly>
-                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" required><br>
-                                <input type="text" name="address1" id="sample6_address" placeholder="주소" readonly required>
-                                <input type="text" name="address2" id="sample6_address2" placeholder="상세주소" required><br>
+                                <span>주소</span><input type="text" name="add_num" id="sample6_postcode" placeholder="우편번호" readonly>
+                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" ><br>
+                                <input type="text" name="address1" id="sample6_address" placeholder="주소" readonly >
+                                <input type="text" name="address2" id="sample6_address2" placeholder="상세주소" ><br>
                                 
-                                <span>DM발송처</span> <input type="radio" name="DM" value="자택" checked required>자택
-                                <input type="radio" name="DM" value="직장" required>직장<br>
+                                <span>DM발송처</span> <input type="radio" name="DM" value="자택" checked >자택
+                                <input type="radio" name="DM" value="직장" >직장<br>
                                 
                                 <div class="lin2"></div>
 
@@ -214,22 +212,22 @@
                                 <span>직종</span><input type="text" name="op" class="one"><br>
                                 <span>직위</span><input type="text" name="sp" class="one"><br>
                                 <!--직장주소-->
-                                <span>직장 주소</span><input type="text" name="add_num2" id="sample7_postcode" placeholder="우편번호" required readonly>
-                                <input type="button" onclick="sample7_execDaumPostcode()" value="우편번호 찾기" required><br>
-                                <input type="text" name="address11" id="sample7_address1" placeholder="주소" readonly required>
-                                <input type="text" name="address22" id="sample7_address2" placeholder="상세주소" required><br>
+                                <span>직장 주소</span><input type="text" name="add_num2" id="sample7_postcode" placeholder="우편번호"  readonly>
+                                <input type="button" onclick="sample7_execDaumPostcode()" value="우편번호 찾기" ><br>
+                                <input type="text" name="address11" id="sample7_address1" placeholder="주소" readonly >
+                                <input type="text" name="address22" id="sample7_address2" placeholder="상세주소" ><br>
                                 
-                                <span>직장 전화번호</span><select name="phone11" class="w" required>
+                                <span>직장 전화번호</span><select name="phone11" class="w" >
                                     <option value="010">010</option>
                                     <option value="011">011</option>
                                     <option value="016">016</option>
                                     <option value="017">017</option>
                                     <option value="018">018</option>
                                     <option value="019">019</option>
-                                </select> - <input name="phone22" type="text" class="w" required> - <input name="phone33" type="text" class="w" required><br>
-                                <span>결혼여부</span> <input type="radio" name="merry" value="미혼" checked required>미혼
-                                <input type="radio" name="merry" value="기혼" required>기혼<br>
-                                <span>결혼기념일</span><select name="meyear" class="year m" required>
+                                </select> - <input name="phone22" type="text" class="w" > - <input name="phone33" type="text" class="w" ><br>
+                                <span>결혼여부</span> <input type="radio" name="merry" value="미혼" checked >미혼
+                                <input type="radio" name="merry" value="기혼" >기혼<br>
+                                <span>결혼기념일</span><select name="meyear" class="year m" >
                                 <option value="" selected>연도를 선택</option>
                                 <?php
                                 for($i=1960; $i<=2016; $i++){
@@ -237,7 +235,7 @@
                                 }
                                 ?>
                                 </select>년
-                                <select name="memonth" class="month m" required>
+                                <select name="memonth" class="month m" >
                                     <option value="" selected>월을 선택</option>
                                     <?php
                                     for($i=1; $i<=12; $i++){
@@ -245,7 +243,7 @@
                                     }
                                     ?>
                                 </select>월
-                                <select name="meday" class="day m" required>
+                                <select name="meday" class="day m" >
                                     <option value="" selected>일을 선택</option>
                                     <?php
                                     for($i=1; $i<=31; $i++){
@@ -256,8 +254,8 @@
                             </div>
                         </div>
                         <div class="btn_wrap">
-                            <a href="./index.php" class="sp_sub btn_cancle">취소</a>
                             <button type="submit" class="sp_sub btn_next">회원가입</button>
+                            <a href="./index.php" class="sp_sub btn_cancle">취소</a>
                         </div>
                     </form>
 				</div>

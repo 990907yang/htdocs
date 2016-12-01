@@ -34,7 +34,7 @@ p{color:#333}
 .sp_com{display:block;height:26px;background:url(../img/sp_common.png) no-repeat;text-indent:-9999px}
 .sp_main{display:block;overflow:hidden;background:url(../img/sp_main.png) no-repeat;text-indent:-9999px}
 .sp_bg{display:block;background:url(../img/sp_bg.png) no-repeat}
-.sp_sub{display:inline-block;overflow:hidden;background:url(../img/sp_sub.png) no-repeat;text-indent:-9999px}
+.sp_sub{float:left; overflow:hidden;background:url(../img/sp_sub.png) no-repeat;text-indent:-9999px; margin-right: 10px;}
 .sp_ly{background:url(../img/sp_layer2.png) no-repeat}
 .btn_img{display:inline-block;background:url(../img/sp_btn.gif) no-repeat}
 .rdo_btn .rdo_on,

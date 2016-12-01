@@ -7,7 +7,11 @@
     $pnum2 = $_POST["phone11"].$_POST["phone22"].$_POST["phone33"];
     $phone2 = preg_replace("/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/","$1-$2-$3", $pnum2);
 
-    $address = $_POST["address1"].$_POST["address2"];
+    $sql = "insert into member set name='{$_POST['name']}' ,ename='{$_POST["ename"]}',year='{$_POST["year"]}',month='{$_POST['month']}',day='{$_POST['day']}',id='{$_POST['id']}',password='{$_POST['password']}',pnum='{$pnum}',ok='{$_POST['ok']}',email='{$_POST['email']}',add_num='{$_POST['add_num']}',address1='{$_POST['address1']}',address2='{$_POST['address2']}',DM='{$_POST['DM']}',emp='{$_POST['emp']}',op='{$_POST['op']}',sp='{$_POST['sp']}',add_num2='{$_POST['add_num2']}',address11='{$_POST['address11']}',address22='{$_POST['address22']}',pnum2='{$pnum2}',merry='{$_POST['merry']}',meyear='{$_POST['meyear']}',memonth='{$_POST['memonth']}',meday='{$_POST['meday']}'";
 
-$sql = "insert into member set name='{$_POST['name']}' ,eName='{$_POST["eName"]}',bYear='{$_POST["bYear"]}',bMonth='{$_POST['bMonth']}',bDay='{$_POST['bDay']}',id='{$_POST['id']}',pw='{$_POST['pw']}',fN='{$Number}',fPn='{$phoneNumber}',sns='{$_POST['sns']}',email='{$_POST['email']}',fPostN='{$_POST['fPostN']}',address='{$_POST['address']}',Iaddress='{$_POST['Iaddress']}',dm='{$_POST['dm']}',emp='{$_POST['emp']}',op='{$_POST['op']}',sp='{$_POST['sp']}',efPostN='{$_POST['efPostN']}',eAddress='{$_POST['eAddress']}',eIaddress='{$_POST['eIaddress']}',efN='{$ephoneNumber}',ffN='{$fexNumber}',wedding='{$_POST['wedding']}',wYear='{$_POST['wYear']}',wMonth='{$_POST['wMonth']}',wDay='{$_POST['wDay']}'";
+    $go = $pdo->query($sql);
 ?>
+
+<script>
+    location.href='index.php';
+</script>
