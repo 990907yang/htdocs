@@ -2,7 +2,7 @@
     include 'db.php';
     $sql = 'select * from board';
     $se = $pdo->prepare($sql);
-    $se -> execute($sql);
+    $se -> execute();
     $result = $se->fetchAll();
 ?>
 
@@ -14,17 +14,24 @@
 </head>
 <body>
     <table>
-        <tbody>
-            <thead>
-                <th>순번</th>
+        <thead>
+            <tr>
+                <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
-            </thead>
-            <tr>ㅁ</tr>
-            <tr>ㄴ</tr>
-            <tr>ㅇ</tr>
-            <tr>ㄹ</tr>
-        </tbody>
+            </tr>
+        </thead>
+        <?php
+            foreach($result as $re){
+        ?>
+        <tr>
+            <td><?=$re['idx']?></td>
+            <td><a href="view.php?idx=<?=$re['idx']?>"><?=$re['title']?></a></td>
+            <td><?=$re['writer']?></td>
+        </tr>
+        <?php
+            }
+        ?>
     </table>
 </body>
 </html>
