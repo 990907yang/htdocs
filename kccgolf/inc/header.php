@@ -36,7 +36,7 @@
 		<div id="site_gnb">
 			<div class="">
 			<ul class="gnb_menu">
-			<li><a href="#">로그인</a></li>
+			<li><a href="#login-box" class="login-window">로그인</a></li>
 			<li><a href="signin.php">회원가입</a></li>
 			<li><a href="#">사이트맵</a></li>
 			</ul>

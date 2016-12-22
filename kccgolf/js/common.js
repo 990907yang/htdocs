@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ 
 
   //banner
   $('.banner').flexslider({
@@ -76,3 +76,6 @@ $(document).ready(function(){
       fakeN.setAttribute("class", "rdo_on");
     }
   }
+$(document).ready(function)(){
+    $('')
+}

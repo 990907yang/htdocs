@@ -11,6 +11,26 @@
 	<!-- container -->
 	<div id="container">
 		<div id="content">
+		
+            <!--로그인 팝업-->
+            <div id="login-box" class="login-popup">
+            <a href="#" class="close"><img src="./img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+              <form method="post" class="signin" action="#">
+                    <fieldset>
+                        <label for="id">
+                            <span>ID</span>
+                            <input type="text" name="id" value="" autocomplete="on" placeholder="ID">
+                        </label>
+                        <label for="pw">
+                            <span>PASSWORD</span>
+                            <input type="password" name="pw" value="" autocomplete="off" placeholder="PASSWORD">
+                        </label>
+                        <button class="submit_button" type="button">로그인</button>
+                        <p><a href="signin.php">회원가입</a></p>
+                    </fieldset>
+              </form>
+            </div>
+            <!--//로그인 팝업-->
 			<div class="sp_bg spot_wth">
 				<h2 class="blind">날씨온도 정보</h2>
 				<ol class="wth_list">
